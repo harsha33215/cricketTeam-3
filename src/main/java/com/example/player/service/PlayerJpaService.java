@@ -63,7 +63,7 @@ public class PlayerJpaService implements PlayerRepository {
             if (player.getRole() != null) {
                 newPlayer.setRole(player.getRole());
             }
-
+            playerJpaRepository.save(newPlayer);
             return newPlayer;
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
